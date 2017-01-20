@@ -21,7 +21,7 @@ h1, h2, h3 {
   font-family: 'Open Sans', sans-serif
 }
 
-body, .navbar {
+.navbar, .home-callout {
   
   //gradient by A little thing by @_ighosh gradientui.com
   background: #00d2ff; /* fallback for old browsers */
@@ -32,5 +32,10 @@ body, .navbar {
 
 .navbar {
   border: none;
-  
+}
+
+.home-callout {
+  margin-top: -20px;
+  padding: 50px 0 100px;
+  color: white;
 }
