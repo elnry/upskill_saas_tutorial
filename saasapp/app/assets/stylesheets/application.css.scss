@@ -35,21 +35,14 @@ h1, h2, h3 {
 }
 
 .navbar-default {
-  .navbar-brand {
+  .navbar-brand, .navbar-nav li a {
     color: white;
     &:hover {
       color:white;
       opacity: 0.75;
     }
   }
-  
-  .navbar-nav li a {
-    color: white;
-    &:hover {
-      color:white;
-      opacity: 0.75;
-    }
-  }
+
 }
 
 .home-callout {
