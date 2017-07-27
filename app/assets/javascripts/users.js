@@ -1,7 +1,7 @@
 /* global $, Stripe */
 $(document).on('turbolinks:load', function () {
     var theForm = $('#pro-form');
-    var submitBtn = $('#form-submit-btn');
+    var submitBtn = $('#form-signup-btn');
     
     Stripe.setPublishableKey( $('meta[name="stripe-key"]').attr('content') );
     
@@ -67,6 +67,7 @@ $(document).on('turbolinks:load', function () {
         theForm.append($('<input type="hidden" name="user[stripe_card_token]">').val(token) );
         
         //submit form to our Rails app
+        //get(0) - to grab theForm , the theForm is in an array
         theForm.get(0).submit();
     }
     
