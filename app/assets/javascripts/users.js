@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function () {
         
         if (error) {
             //if there are card errors, don't send to Stripe
-            submitBtn.prop('disable', false).val('Sign Up');
+            submitBtn.prop('disabled', false).val('Sign Up');
         } else {
         
             //send the card info to Stripe
