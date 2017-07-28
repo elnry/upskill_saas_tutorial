@@ -1,8 +1,9 @@
 /* global $, Stripe */
 $(document).on('turbolinks:load', function () {
-    var theForm = $('#pro-form');
+    var theForm = $('#pro_form');
     var submitBtn = $('#form-signup-btn');
     
+	
     Stripe.setPublishableKey( $('meta[name="stripe-key"]').attr('content') );
     
     //event - when the user clicks it's an event
@@ -10,7 +11,7 @@ $(document).on('turbolinks:load', function () {
         
         //prevent default submission behavior.
         event.preventDefault(); 
-        submitBtn.val('Processing').prop('disable', true);
+        submitBtn.val('Processing').prop('disabled', true);
         
         //collect the card fields 
         var ccNum = $('#card_number').val(),
@@ -67,7 +68,6 @@ $(document).on('turbolinks:load', function () {
         theForm.append($('<input type="hidden" name="user[stripe_card_token]">').val(token) );
         
         //submit form to our Rails app
-        //get(0) - to grab theForm , the theForm is in an array
         theForm.get(0).submit();
     }
     

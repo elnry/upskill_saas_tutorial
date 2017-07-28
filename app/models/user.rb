@@ -6,12 +6,10 @@ class User < ApplicationRecord
          
   belongs_to :plan
   
-  #security feature
   attr_accessor :stripe_card_token
   
   def save_with_subscription 
     if valid?
-      #calls Stripe
       customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
       self.stripe_customer_token = customer.id
       save!
